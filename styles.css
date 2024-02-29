@@ -32,3 +32,8 @@ html, body {
     width: 300px; /* Or whatever width you prefer */
     border-radius: 5px;
 }
+.book-card {
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+}
