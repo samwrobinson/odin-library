@@ -34,6 +34,7 @@ function displayBooks() {
                 <li>Read: ${book.read ? 'Yes' : 'No'}</li>
             </ul>
             <button class="remove-book" data-index="${index}">Remove Book</button>
+            <button class="mark-read" data-index="${index}">Mark Read.</button>
         `;
         libraryContainer.appendChild(bookCard);;
     }
@@ -44,6 +45,14 @@ libraryContainer.addEventListener('click', function(event) {
         const bookIndex = event.target.getAttribute('data-index');
         myLibrary.splice(bookIndex, 1);
         displayBooks();
+    }
+});
+
+libraryContainer.addEventListener('click', function(event) {
+    if (event.target.classList.contains('mark-read')) {
+        const bookIndex = parseInt(event.target.getAttribute('data-index'), 10); // Get the index and ensure it's a number
+        myLibrary[bookIndex].read = !myLibrary[bookIndex].read; // Toggle the 'read' status
+        displayBooks(); // Refresh the display
     }
 });
 

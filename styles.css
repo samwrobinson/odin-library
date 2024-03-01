@@ -1,9 +1,21 @@
 * {
     box-sizing: border-box;
 }
+:root {
+    --background-white: #f2f2f2;
+    --library-color: #FEFEFF;
+    --subtleShadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    --boldShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    --borderColor: #F2A359;
+}
 html, body {
     height: 100%;
     width: 100%;
+    background-color: var(--background-white);
+}
+ul {
+    list-style: none;
+    padding: 0;
 }
 .container {
     display: flex;
@@ -13,12 +25,29 @@ html, body {
     height: 90%;
     margin: 5%;
 }
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    background-color: var(--library-color);
+    border-radius: 15px;
+    box-shadow: var(--subtleShadow);
+    margin-bottom: 3%;
+}
 .library-container {
-    width: 100%;
+    width: 60%;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    background-color: var(--library-color);
+    border-radius: 15px;
+    box-shadow: var(--subtleShadow);
 }
 .book-form {
     position: fixed; /* Or 'absolute' if you prefer */
@@ -33,7 +62,19 @@ html, body {
     border-radius: 5px;
 }
 .book-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 90%;
     height: 90%;
     margin: 5%;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: var(--boldShadow);
+    border-left: var(--borderColor) 4px solid;
+}
+
+.book-card button {
+    width: 60%;
 }
